@@ -6,8 +6,7 @@
     "build:preview": "gulp build-preview",
     "start": "npm run server",
     "server": "gulp server",
-    "server:with-drafts": "gulp server:with-drafts",
-    "cms:delete": "gulp cms-delete"
+    "server:with-drafts": "gulp server:with-drafts"
   },
   "dependencies": {
     "@babel/core": "^7.1.2",
