@@ -159,10 +159,6 @@ gulp.task('images', () => {
         .pipe(gulp.dest('static/images'));
 });
 
-gulp.task('cms-delete', () => {
-    return del(['static/admin'], { dot: true })
-})
-
 gulp.task('pub-delete', () => {
     return del(['public/**', '!public', 'functions/**', '!functions'], {
       // dryRun: true,
