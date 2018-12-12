@@ -14,7 +14,7 @@ The [Hugo](https://gohugo.io/) boilerplate we use for our projects.
 
 Atlas provides the following features out of the box:
 
-* A set of [Gulp](/gulpfile.babel.js) tasks for SASS, Linting, ES2015, Image compression
+* A set of [Gulp](/gulpfile.babel.js) tasks for SASS, ES2015, Image compression
 * Environment driven `robots.txt` file (disallows robots on everything other than production)
 * Base HTML templates with easy customisation/extension
 * [Configuration](/netlify.toml) for Netlify deployments
@@ -135,7 +135,6 @@ If you wish the develop your site as a theme inside Atlas, you can copy `/layout
 │   └──── /static            - Hugo static resources
 │
 │ .gitignore
-│ .sass-lint.yml             - Linting rules for sass-lint
 │ LICENSE
 │ README.md
 │ config.toml                - Hugo configuration
