@@ -12,14 +12,15 @@ const   $ = gulpLoadPlugins(),
         browserSync = require('browser-sync').create(),
         isProduction = process.env.NODE_ENV === 'production';
 
+let     suppressHugoErrors = false;
 
+
+//-- IMPORTANT
 //error handler
 function onError(err) {
     console.log(err.message);
     this.emit('end');
 }
-
-let suppressHugoErrors = false;
 
 // start browsersync
 gulp.task('browser-sync', () => {
@@ -31,6 +32,8 @@ gulp.task('browser-sync', () => {
     });
 });
 
+
+//-- RUN
 //start the server
 gulp.task('server', ['build', 'browser-sync'], () => {
     suppressHugoErrors = true;
@@ -58,6 +61,8 @@ gulp.task('build-preview', () => {
     runSequence('pub-delete', ['sass', 'js', 'fonts', 'images', 'build-functions'], 'hugo-preview')
 })
 
+
+//-- BUILD
 //build functions
 gulp.task('build-functions', (cb) => {
 
@@ -82,7 +87,8 @@ gulp.task('build-functions', (cb) => {
 
 })
 
-//hugo task
+//-- hugo tasks
+//hugo
 gulp.task('hugo', (cb) => {
     let baseUrl = process.env.NODE_ENV === 'production' ? process.env.URL : process.env.DEPLOY_PRIME_URL;
     let args = baseUrl ? ['-b', baseUrl] : [];
