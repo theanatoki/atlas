@@ -40,7 +40,7 @@ gulp.task('server', ['build', 'browser-sync'], () => {
     gulp.watch('src/sass/**/*.scss', ['sass'])
     gulp.watch('src/js/**/*.js', ['js-watch'])
     gulp.watch('src/images/**/*', ['images'])
-    gulp.watch(['archetypes/**/*', 'data/**/*', 'content/**/*', 'layouts/**/*', 'static/**/*', 'config.toml'], ['hugo'])
+    gulp.watch(['archetypes/**/*', 'data/**/*', 'content/**/*', 'layouts/**/*', 'static/!(css)**/*', 'config.toml'], ['hugo'])
 });
 
 //start the server: with drafts
