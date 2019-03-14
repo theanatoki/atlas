@@ -48,7 +48,7 @@ gulp.task('server:with-drafts', ['build-preview', 'browser-sync'], () => {
     gulp.watch('src/sass/**/*.scss', ['sass'])
     gulp.watch('src/js/**/*.js', ['js-watch'])
     gulp.watch('src/images/**/*', ['images'])
-    gulp.watch(['archetypes/**/*', 'data/**/*', 'content/**/*', 'layouts/**/*', 'static/**/*', 'config.toml'], ['hugo-preview'])
+    gulp.watch(['archetypes/**/*', 'data/**/*', 'content/**/*', 'layouts/**/*', 'static/!(css)**/*', 'config.toml'], ['hugo-preview'])
 });
 
 //build the site
