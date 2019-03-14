@@ -136,7 +136,8 @@ gulp.task('sass', () => {
     .pipe($.autoprefixer(['ie >= 10', 'last 2 versions']))
     .pipe($.if(isProduction, $.cssnano({ discardUnused: false, minifyFontValues: false })))
     .pipe($.size({ gzip: true, showFiles: true }))
-    .pipe($.if(isProduction, gulp.dest('static/css'), gulp.dest('public/css'))) // if build process is not production, simply put the css in the public folder and don't rebuild hugo ( so the page doesn't auto reload)
+    .pipe(gulp.dest('static/css'))
+    .pipe(gulp.dest('public/css'))
     .pipe(browserSync.stream())
 })
 
