@@ -48,7 +48,7 @@ gulp.task('server:with-drafts', ['build-preview', 'browser-sync'], () => {
     gulp.watch('src/sass/**/*.scss', ['sass'])
     gulp.watch('src/js/**/*.js', ['js-watch'])
     gulp.watch('src/images/**/*', ['images'])
-    gulp.watch(['archetypes/**/*', 'data/**/*', 'content/**/*', 'layouts/**/*', 'static/!(css)**/*', 'config.toml'], ['hugo'])
+    gulp.watch(['archetypes/**/*', 'data/**/*', 'content/**/*', 'layouts/**/*', 'static/**/*', 'config.toml'], ['hugo-preview'])
 });
 
 //build the site
@@ -136,7 +136,7 @@ gulp.task('sass', () => {
     .pipe($.autoprefixer(['ie >= 10', 'last 2 versions']))
     .pipe($.if(isProduction, $.cssnano({ discardUnused: false, minifyFontValues: false })))
     .pipe($.size({ gzip: true, showFiles: true }))
-    .pipe(gulp.dest('static/css')) // if build process is not production, simply put the css in the public folder and don't rebuild hugo ( so the page doesn't auto reload)
+    .pipe($.if(isProduction, gulp.dest('static/css'), gulp.dest('public/css'))) // if build process is not production, simply put the css in the public folder and don't rebuild hugo ( so the page doesn't auto reload)
     .pipe(browserSync.stream())
 })
 
