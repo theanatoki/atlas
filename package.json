@@ -9,8 +9,8 @@
     "server:with-drafts": "hugo server --buildFuture"
   },
   "dependencies": {
-    "autoprefixer": "^9.0.0",
-    "netlify-lambda": "^0.4.0",
-    "postcss-cli": "^6.0.0"
+    "autoprefixer": "^9.5.0",
+    "netlify-lambda": "^1.4.3",
+    "postcss-cli": "^6.1.2"
   }
 }
