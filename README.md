@@ -14,7 +14,7 @@ The [Hugo](https://gohugo.io/) boilerplate we use for our projects.
 
 Atlas provides the following features out of the box:
 
-* A set of [Gulp](/gulpfile.babel.js) tasks for SASS, ES2015, Image compression
+* Pre configured support for Hugo Pipes, with SASS and Autoprefixer
 * Environment driven `robots.txt` file (disallows robots on everything other than production)
 * Base HTML templates with easy customisation/extension
 * [Configuration](/netlify.toml) for Netlify deployments
@@ -23,7 +23,7 @@ Atlas provides the following features out of the box:
 
 ## Prerequisite
 
-Atlas does not include a copy of the `hugo` binary. You will need to [install Hugo](https://gohugo.io/getting-started/installing/) first you can run any of the [commands](#available-commands) mentioned below.
+Atlas does not include a copy of the `hugo` binary. You will need to [install Hugo](https://gohugo.io/getting-started/installing/) first you can run any of the [commands](#available-commands) mentioned below. It does however include a Hugo version number as part of the `netlify.toml` file to specify the version of Hugo to use when building on Netlify.
 
 ## Getting Started
 
@@ -109,6 +109,8 @@ If you wish the develop your site as a theme inside Atlas, you can copy `/layout
 ## File Structure
 
 ```
+│   │
+|   └──── /assets            - Source files for assets (SASS, JS, Images, Fonts etc)
 │
 └──── /layouts               - Template files
 │   │ 404.html               - 404 Template
@@ -130,15 +132,13 @@ If you wish the develop your site as a theme inside Atlas, you can copy `/layout
 │           │ scripts.html   - JavaScript <script> referenced before closing </body>
 │           │ styles.html    - Stylesheets referenced before closing </head>
 │   │
-|   └──── /src               - Source files for assets (SASS, JS, Images, Fonts etc)
-│   │
 │   └──── /static            - Hugo static resources
 │
 │ .gitignore
 │ LICENSE
 │ README.md
 │ config.toml                - Hugo configuration
-│ gulpfile.babel.js          - Gulp configuration/tasks
+│ postcss.config.js          - PostCSS configuration for Hugo Pipes
 │ netlify.toml               - Netlify configuration
 │ package.json
 ```
