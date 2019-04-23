@@ -2,11 +2,10 @@
   "name": "atlas",
   "private": true,
   "scripts": {
-    "build": "hugo",
-    "build:preview": "hugo --buildFuture",
     "start": "hugo server",
-    "server": "hugo server",
-    "server:with-drafts": "hugo server --buildFuture"
+    "build": "hugo && npm run build:functions",
+    "build:functions": "netlify-lambda build assets/lambda",
+    "server": "hugo server"
   },
   "dependencies": {
     "autoprefixer": "^9.5.0",
