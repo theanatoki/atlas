@@ -8,8 +8,8 @@
     "server": "hugo server"
   },
   "dependencies": {
-    "autoprefixer": "^9.5.0",
-    "netlify-lambda": "^1.4.3",
+    "autoprefixer": "^9.6.0",
+    "netlify-lambda": "^1.4.13",
     "postcss-cli": "^6.1.2"
   }
 }
